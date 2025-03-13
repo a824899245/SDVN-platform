@@ -1,16 +1,16 @@
 #routing test
 #before this run file_io
 
-import Get_Move as Gm
+import get_move as Gm
 import Init
 import numpy as np
 import Global_Par as Gp
 import time as t
 import jhmmtg as jh
 import junction_init as ji
-import big_junction_init as bji
-import big_jhmmtg as bjh
-import big_HRLB as bhr
+# import big_junction_init as bji
+# import big_jhmmtg as bjh
+# import big_HRLB as bhr
 import HRLB as hr
 import tgeaa as tg
 node_list = []
@@ -18,7 +18,7 @@ com_node_list = []
 
 head = []
 tail = []
-with open('big_400.tcl', 'r') as f:
+with open('500.tcl', 'r') as f:
     for line in f:
         print(line)
         if line[2] == 'o':
@@ -51,7 +51,7 @@ node_position = init_position_arranged[0]
 
 # ji.inti()
 
-bji.inti()
+ji.inti()
 hr.grid_intiall()
 # 节点初始化
 node_list = (Init.init_node(node_position, controller))
@@ -139,7 +139,7 @@ for i in range(round):
         for node in node_list:
             node.forward_pkt_to_nbr(node_list, controller)
 
-        bjh.delete()
+        jh.delete()
         hr.grid_delete(node_list)
 
     end_time = t.time()

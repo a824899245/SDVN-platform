@@ -1,7 +1,7 @@
 import Packet as Pkt
 import Global_Par as Gp
 import jhmmtg as jh
-import big_jhmmtg as bjh
+# import big_jhmmtg as bjh
 import time
 import proba as pr
 import math
@@ -31,7 +31,7 @@ class Node:
         self.velocity[2] = node_id_position[self.node_id][0, 2] - self.position[2]
         self.position = [node_id_position[self.node_id][0, 0], node_id_position[self.node_id][0, 1], node_id_position[self.node_id][0, 2]]
         self.junction = jh.junction_judge(self.position[0], self.position[1], self.node_id)
-        self.big_junction = bjh.junction_judge(self.position[0], self.position[1], self.node_id)
+        # self.big_junction = bjh.junction_judge(self.position[0], self.position[1], self.node_id)
         self.grid = int(self.position[0] / 500) + int(self.position[1] / 500) * 13
         return
 

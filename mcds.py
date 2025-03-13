@@ -16,7 +16,7 @@ G.add_edge(5, 6, weight=4)
 G.add_edge(6, 9, weight=4)
 
 D = []
-for i in G.node:
+for i in G.nodes:
     D.append(i)
 F = []
 degree = []
@@ -61,7 +61,7 @@ s = 0
 print(1)
 visited = []
 un = []
-for i in sub.node:
+for i in sub.nodes:
     if i != s:
         un.append(i)
 
@@ -94,11 +94,11 @@ visited = []
 for i in D:
     visited.append(i)
 
-for i in G.node:
+for i in G.nodes:
     if visited.count(i) == 0:
         un.append(i)
 
-for i in G.node:
+for i in G.nodes:
     for next in G.adj[i]:
         if visited.count(next) == 0:
             next_hop[i].append(next)

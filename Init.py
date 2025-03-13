@@ -2,7 +2,7 @@
 
 
 import Node as Nd
-import SDVN_Controller as Sc
+import sdvn_controller as Sc
 import random
 import Global_Par as Gp
 import networkx as nx
@@ -44,7 +44,7 @@ def get_communication_node(node_num, node_list):
                 if node_id_1 not in com_nodelist:
                     dis = math.sqrt(pow(node_list[node_id].position[0] - node_list[node_id_1].position[0], 2) + pow(
                         node_list[node_id].position[1] - node_list[node_id_1].position[1], 2))
-                    if 3500 < dis < 4000:
+                    if 1000 < dis < 3000:
                         com_nodelist.append(node_id)
                         com_nodelist.append(node_id_1)
                         com_nodelist_pair.append([node_id,node_id_1])
